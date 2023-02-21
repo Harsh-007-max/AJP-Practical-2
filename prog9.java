@@ -13,7 +13,7 @@ public class prog9 extends Frame{
         // setDefaultCloseOperation(   .EXIT_ON_CLOSE);
         
         JPanel p1 = new JPanel(new CardLayout());
-        
+
         b = new JButton("Home");
         
         p1.add(b,"card1");
@@ -22,6 +22,14 @@ public class prog9 extends Frame{
         CardLayout cl = (CardLayout) p1.getLayout();
         cl.show(p1, "card1");
         add(p1);
+
+
+        JPanel sem1 = new JPanel(new CardLayout());
+
+        
+        JPanel sem2 = new JPanel(new CardLayout());
+
+        
     }
     public static void main(String[] args){
         new prog9();
