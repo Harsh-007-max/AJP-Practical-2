@@ -15,14 +15,8 @@ public class prog4 extends Applet implements ActionListener{
     public void init(){
         l = new Label("List 1:");
         l1 = new List(4, true);
-        l1.add("JAVA");
-
-        add(l);
-        add(l1);
         list2 = new Label("List 2:");
         l2 = new List(4,true);
-        add(list2);
-        add(l2);
         tfadd = new TextField("Enter Item");
         bent = new Button("Add Item");
         bent.addActionListener(this);
@@ -30,6 +24,10 @@ public class prog4 extends Applet implements ActionListener{
         Movl1.addActionListener(this);
         Movl2 = new Button("Move to List 2");
         Movl2.addActionListener(this);
+        add(l);
+        add(l1);
+        add(list2);
+        add(l2);
         add(tfadd);
         add(bent);
         add(Movl1);
@@ -40,13 +38,17 @@ public class prog4 extends Applet implements ActionListener{
             l1.add(tfadd.getText());
         }else if(e.getSource() == Movl1){
             if(l1.getItemCount()>0){
-                if(l2.getSelectedItem() !="")
-                l1.add(l2.getSelectedItem());
+                if(l2.getSelectedItem() !=""){
+                    l1.add(l2.getSelectedItem());
+                    l2.remove(l2.getSelectedItem());
+                }
             }
         }else if(e.getSource()==Movl2){
             if(l1.getItemCount()>0){
-                if(l1.getSelectedItem() !="")
-                l2.add(l1.getSelectedItem());
+                if(l1.getSelectedItem() !=""){
+                    l2.add(l1.getSelectedItem());
+                    l1.remove(l1.getSelectedItem());
+                }
             }
         }
     }

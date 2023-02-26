@@ -1,23 +1,32 @@
-/*Develop a java applet to design a log in form having Fields 
-Username and Password and buttons for Log-in and Cancel */
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.Label;
-public class prog1 extends Applet{
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class prog1 extends Applet implements ActionListener{
+    Label lname, l,lpass;
+    TextField tname,tpass;
+    Button Login,Cancel;
     public void init(){
-        Label lname = new Label("Username");
+        lname = new Label("Username");
+        tname= new TextField(10);
+        lpass = new Label("Password");
+        tpass = new TextField(10);
+        Login = new Button("Login");
+        Cancel = new Button("Cancel");
+        l = new Label("");
+        Login.addActionListener(this);
+        Cancel.addActionListener(this);
         add(lname);
-        TextField tname= new TextField(10);
         add(tname);
-        Label lpass = new Label("Password");
         add(lpass);
-        TextField tpass = new TextField(10);
         add(tpass);
-        Button Login = new Button("Login");
         add(Login);
-        Button Cancel = new Button("Cancel");
         add(Cancel);
+        add(l);
+    }
+    public void actionPerformed(ActionEvent e){
+        l.setText(e.getSource() == Login ? tname.getText().toString().equals("admin")? tpass.getText().toString().equals("admin")? "Login successful": "Login unsuccessful": "Login unsuccessful": e.getSource() == Cancel? "Login Canceled": "error");
     }
 }
-
 //<applet code="prog1.class" width = 200 height = 200 ></applet>

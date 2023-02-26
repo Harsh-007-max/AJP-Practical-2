@@ -12,7 +12,6 @@ public class prog2 extends Applet implements ActionListener{
     TextField tfname,GSTv,totpritf,bpt;
     Label name,GSTl,totprice,bpl;
     Button calculate,Clear;
-
     public void init(){
         setLayout(new FlowLayout());
         name = new Label("Enter Name:");
@@ -40,8 +39,7 @@ public class prog2 extends Applet implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == calculate){
-            float gst = (Float.parseFloat(bpt.getText())*Float.parseFloat(GSTv.getText()))/100;
-            float totalcost = Float.parseFloat(bpt.getText())+gst;
+            float gst = (Float.parseFloat(bpt.getText())*Float.parseFloat(GSTv.getText()))/100,totalcost = Float.parseFloat(bpt.getText())+gst;
             totpritf.setText(" "+totalcost);
         }
         if(e.getSource() == Clear){

@@ -19,10 +19,8 @@ public class prog8 extends Frame{
         add(e,BorderLayout.EAST);
         add(w,BorderLayout.WEST);
         add(c,BorderLayout.CENTER);
-
     }
     public static void main(String[] args){
         prog8 p = new prog8();
     }
-
 }

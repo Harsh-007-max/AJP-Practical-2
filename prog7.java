@@ -4,7 +4,7 @@ public class prog7 extends Frame{
         int top=0,bottom=length-1,left=0,right=length-1,index=0,maxlen = length*length,Array[][] = new int[length][length],element[] = new int[maxlen+1];
         setLayout(new GridLayout(length,length));
         setVisible(true);
-        setSize(length*length,length*length);
+        setSize(length,length);
         for(int i=1;i<=maxlen;i++)
             element[i-1] = i;
         for(int j=0;j<=maxlen;j++){

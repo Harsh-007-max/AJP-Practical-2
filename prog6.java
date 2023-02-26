@@ -2,7 +2,6 @@
 should display number of circles entered in Textfield by user */
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class prog6 extends Applet implements ActionListener{
@@ -11,7 +10,7 @@ public class prog6 extends Applet implements ActionListener{
     TextField tf;
     Graphics g;
     int val =0;
-    int x = 100,y=100;
+    int x = 0,y=100;
     public void init(){
         l = new Label("Enter number of circles");
         Generate = new Button("Generate");
@@ -23,9 +22,13 @@ public class prog6 extends Applet implements ActionListener{
     }
     public void paint(Graphics g){
         x=100;  
-        for(int i =0;i<val;i++,x+=50){
-
+        for(int i =0;i<val;i++){
             g.drawOval(x,y,50,50);
+            x+=50;
+            if(x>500){
+                y+=50;
+                x=0;
+            }
         }
     }
     public void actionPerformed(ActionEvent e){
